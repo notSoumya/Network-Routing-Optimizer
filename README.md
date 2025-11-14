@@ -26,7 +26,8 @@ The result is a complete system that models how data travels across the Internet
 - BFS for breadth-first exploration  
 - DFS for depth-first exploration  
 - Dijkstra’s Algorithm for weighted shortest paths  
-- File-based network topology loading 
+- File-based network topology loading
+- support for detecting unreachable nodes and cyclic paths
 
 ###  Real-World Network Data
 - Uses actual traceroute output from:
@@ -77,6 +78,7 @@ j.deapth-first search(DFS)
 It was a collaborative effort of all team members - contributors that made this project come alive.
 
 THANKING EVERYONE FOR THEIR EFFORTS
+
 
 
 
