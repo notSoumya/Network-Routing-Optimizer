@@ -1,0 +1,76 @@
+# Network Routing Optimizer  
+
+A C++ and Python project that simulates real-world network routing using graph algorithms.  
+Our Project loads an actual Internet route (captured from tracert), builds a weighted network graph, and computes the shortest path using Dijkstra’s Algorithm.  
+The project also includes a Google Colab visualization that highlights the shortest route in a real network topology.
+
+##  Project Overview
+
+Modern computer networks rely heavily on routing algorithms to determine optimal data paths.  
+This project demonstrates how real-world routing works by:
+
+- Extracting *live routing hops* using the Windows tracert tool  
+- Building a *weighted graph* from real IP addresses & latencies  
+- Implementing *BFS, **DFS, and **Dijkstra’s Algorithm* in C++  
+- Creating a *visual network graph* in Python (NetworkX)  
+- Highlighting the *shortest path* between two real servers
+- **VERY INTERESTING FEATURE**- **where we have tried to simulate if a node is unavialable then the path changes and also when we try
+  overloading a node(that is a wifi router) the path of transfer changes.**
+
+The result is a complete system that models how data travels across the Internet.
+
+##  Features That one can find in our Project
+
+### ✔ C++ Core Routing Engine
+- Graph implementation using adjacency lists  
+- BFS for breadth-first exploration  
+- DFS for depth-first exploration  
+- Dijkstra’s Algorithm for weighted shortest paths  
+- File-based network topology loading 
+
+### ✔ Real-World Network Data
+- Uses actual traceroute output from:
+    tracert google.com
+  Hop-to-hop latency is averaged and used as edge weight  
+- Produces an authentic Internet routing graph  
+
+### ✔ Python Visualization (Google Colab)
+- Generates interactive network diagrams  
+- Highlights shortest path in *red* colour
+- All other edges shown in light gray  
+- Displays IP addresses & weights  
+- Easy to modify for custom datasets  
+
+### ✔ Structured Repository
+We have tried our best to keep a very structured and oriented repository to keep our work clean:
+
+here is a look of how our repo looks- main highlights :( ├── represents a *file* and / represents a *folder*)
+Network-Routing-Optimizer/
+│
+├── src/
+│ ├── graph.cpp
+│ ├── graph.h
+│ └── main.cpp
+│
+├── data/
+│ └── network.txt ← real routing data
+│
+├── visualisation/
+│ └── network_visualisation.ipynb
+│
+└── README.md
+
+*Concepts Used*
+
+a.Graph theory
+b.Weighted graphs
+c.Priority queue (min-heap)
+d.Shortest path algorithms
+e.Real-world traceroute interpretation
+f.Network visualization
+g.File parsing
+h.C++ and Python integration
+
+It was a collaborative effort of all team members - contributors that made this project come alive.
+
+jahnavi ise copy paste daal do read me mein
