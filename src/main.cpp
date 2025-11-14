@@ -1,125 +1,87 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>
 #include "graph.h"
 using namespace std;
-/*
---------------------------------------------------------------
- MAIN APPLICATION: NETWORK ROUTING OPTIMIZER
---------------------------------------------------------------
- This program demonstrates a basic network routing system using
- graph algorithms. It can:
-   - Load a network (graph) from a text file
-   - Perform BFS and DFS traversals
-   - Find the shortest path between two nodes using Dijkstra’s algorithm
-   - Display the current network topology
- The graph file should contain lines in the format:
-     <source> <destination> <weight>
- Example:
-     0 1 4
-     0 2 1
-     2 1 2
-     1 3 1
-     2 3 5
---------------------------------------------------------------
-*/
-// -------------------------------------------------------------
-// Function: loadGraphFromFile
-// Purpose : Reads network edges (u, v, w) from a text file and
-//           adds them to the graph using addEdge().
-// -------------------------------------------------------------
-void loadGraphFromFile(Graph &g, string filename) {
-    ifstream file(filename);
-      // Check if file exists and can be opened
-    if (!file.is_open()) {
-        cout << "Error: Could not open file " << filename << endl;
+
+void loadGraph(Graph &g, string file) {
+    ifstream fin(file);
+    if (!fin.is_open()) {
+        cout << "Cannot open " << file << endl;
         return;
     }
     int u, v, w;
-    cout << "\nLoading network topology from " << filename << "...\n";
-      // Check if file exists and can be opened
-    while (file >> u >> v >> w) {
-        g.addEdge(u, v, w);
-    }
-    cout << "Network loaded successfully.\n\n";
+    while (fin >> u >> v >> w) g.addEdge(u, v, w);
+    fin.close();
 }
-// -------------------------------------------------------------
-// Function: showMenu
-// Purpose : Displays the main menu options to the user.
-// -------------------------------------------------------------
-void showMenu() {
-    cout << "\n==============================\n";
-    cout << "   NETWORK ROUTING OPTIMIZER\n";
-    cout << "==============================\n";
+
+void menu() {
+    cout << "\n=========================================\n";
+    cout << "  WELCOME TO THE NETWORK ROUTING OPTIMIZER \n";
+    cout << "===========================================\n";
     cout << "1. BFS Traversal\n";
     cout << "2. DFS Traversal\n";
     cout << "3. Shortest Path (Dijkstra)\n";
     cout << "4. Print Graph\n";
-    cout << "5. Exit\n";
-    cout << "Choose an option: ";
+    cout << "5. Exit Simualtion\n";
+    cout << "6. Mark Node as Busy\n";
+    cout << "7. Unblock a Node\n";
+    cout << "8. Show Busy Nodes\n";
+    cout << "9. Set Node Capacity\n";
+    cout << "10. Show Node Load/Capacity\n";
+    cout << "Choose Your Option: ";
 }
-
-// -------------------------------------------------------------
-// Function: main
-// Purpose : Entry point of the program. Handles user input,
-//           menu interaction, and invokes graph algorithms.
-// -------------------------------------------------------------
 
 int main() {
     int V;
-  // Step 1: Create a graph with given number of nodes
-    cout << "Enter number of nodes in network: ";
+    cout << "Enter number of nodes: ";
     cin >> V;
+
     Graph g(V);
-    // Step 2: Load network edges from a file
-    loadGraphFromFile(g, "data/network.txt");
-    
-    int choice, start, end;
-  // Step 3: Display menu repeatedly until user exits
+
+    loadGraph(g, "data/network.txt");
+
     while (true) {
-        showMenu();
-        cin >> choice;
-        switch (choice) {
-          // --- Perform BFS Traversal ---
-        case 1:
-            cout << "Enter start node for BFS: ";
-            cin >> start;
-            g.BFS(start);
-            break;
-          // --- Perform DFS Traversal ---
-        case 2:
-            cout << "Enter start node for DFS: ";
-            cin >> start;
-            g.DFS(start);
-            break;
-          // --- Compute Shortest Path using Dijkstra’s Algorithm ---
-        case 3:
-            cout << "Enter start node: ";
-            cin >> start;
-            cout << "Enter end node: ";
-            cin >> end;
-            {
-                vector<int> path = g.dijkstra(start, end);
-                cout << "\nShortest Path from " << start 
-                     << " to " << end << ": ";
-              // Display the path nodes in sequence
-                for (int node : path) 
-                    cout << node << " ";
-                cout << endl;
-            }
-            break;
-          // --- Print the entire network (adjacency list or matrix) ---
-        case 4:
-            g.printGraph();
-            break;
-          // --- Exit the program ---
-        case 5:
-            cout << "Exiting...\n";
-            return 0;
-          // --- Handle invalid user input ---
-        default:
-            cout << "Invalid choice.\n";
+        menu();
+        int ch; cin>>ch;
+
+        if(ch == 5) {break;}
+
+        if(ch == 1) {
+            int s; cout << "Start BFS: "; cin >> s;
+            g.BFS(s);
         }
+        else if(ch == 2) {
+            int s; cout << "Start DFS: "; cin >> s;
+            g.DFS(s);
+        }
+        else if (ch == 3) {
+            int s, e;
+            cout << "Start: "; cin >> s;
+            cout << "End: "; cin >> e;
+            auto path = g.dijkstra(s, e);
+
+            cout <<"Path: ";
+            for (int n : path) cout << n << " ";
+            cout << endl;
+        }
+        else if(ch == 4){g.printGraph();} 
+        else if(ch == 6) {
+            int x; cout << "Node to mark busy: "; cin >> x;
+            g.block(x);
+        }
+        else if (ch == 7) {
+            int x; cout << "Node to unblock: "; cin >> x;
+            g.unblock(x);
+        }
+        else if(ch == 8) g.showBusyNodes();
+        else if(ch == 9){
+            int n, c;
+            cout << "Node: "; cin >> n;
+            cout << "Capacity: "; cin >> c;
+            g.setCapacity(n, c);
+        }
+        else if(ch == 10) g.showLoadCapacity();
     }
+
     return 0;
 }
