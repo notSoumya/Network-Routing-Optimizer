@@ -71,9 +71,12 @@ d.Shortest path algorithms
 e.Real-world traceroute interpretation
 f.Network visualization
 h.C++ and Python integration
+i.breadth-first search(BFS)
+
 
 It was a collaborative effort of all team members - contributors that made this project come alive.
 
 THANKING EVERYONE FOR THEIR EFFORTS
+
 
 
