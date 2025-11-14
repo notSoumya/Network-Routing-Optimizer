@@ -45,15 +45,17 @@ int main() {
         int ch; cin>>ch;
 
         if(ch == 5) {break;}
-
+        //BFS
         if(ch == 1) {
             int s; cout << "Start BFS: "; cin >> s;
             g.BFS(s);
         }
+        //DFS
         else if(ch == 2) {
             int s; cout << "Start DFS: "; cin >> s;
             g.DFS(s);
         }
+        //DIJKSTRA'S ALGORIHM
         else if (ch == 3) {
             int s, e;
             cout << "Start: "; cin >> s;
@@ -64,15 +66,19 @@ int main() {
             for (int n : path) cout << n << " ";
             cout << endl;
         }
+            //PRINT GRAPH
         else if(ch == 4){g.printGraph();} 
+            //NODE BLOCK
         else if(ch == 6) {
             int x; cout << "Node to mark busy: "; cin >> x;
             g.block(x);
         }
+            //NODE UNBLOCK
         else if (ch == 7) {
             int x; cout << "Node to unblock: "; cin >> x;
             g.unblock(x);
         }
+            //TO SHOW BUSY NODES
         else if(ch == 8) g.showBusyNodes();
         else if(ch == 9){
             int n, c;
@@ -80,8 +86,10 @@ int main() {
             cout << "Capacity: "; cin >> c;
             g.setCapacity(n, c);
         }
+          //SHOW LOAD CAPACITY  
         else if(ch == 10) g.showLoadCapacity();
     }
 
     return 0;
 }
+
