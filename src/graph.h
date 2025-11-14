@@ -9,7 +9,7 @@ using namespace std;
 
 class Graph {
 private:
-    int V;
+    int V;  // number of nodes
     vector<vector<pair<int,int>>> adj;
 
     vector<bool> busy;        // busy nodes
@@ -40,5 +40,6 @@ public:
 };
 
 #endif
+
 
 
