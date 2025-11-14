@@ -72,5 +72,4 @@ h.C++ and Python integration
 
 It was a collaborative effort of all team members - contributors that made this project come alive.
 
-jahnavi ise copy paste daal do read me mein
-
+THANKING EVERYONE FOR THEIR EFFORTS
