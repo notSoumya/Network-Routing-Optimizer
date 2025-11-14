@@ -39,7 +39,8 @@ The result is a complete system that models how data travels across the Internet
 - Highlights shortest path in *red* colour
 - All other edges shown in light gray  
 - Displays IP addresses & weights  
-- Easy to modify for custom datasets  
+- Easy to modify for custom datasets
+- provides information for deeper network analysis
 
 ###  Structured Repository
 We have tried our best to keep a very structured and oriented repository to keep our work clean:
@@ -73,3 +74,4 @@ h.C++ and Python integration
 It was a collaborative effort of all team members - contributors that made this project come alive.
 
 THANKING EVERYONE FOR THEIR EFFORTS
+
