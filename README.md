@@ -21,27 +21,27 @@ The result is a complete system that models how data travels across the Internet
 
 ##  Features That one can find in our Project
 
-### ✔ C++ Core Routing Engine
+###  C++ Core Routing Engine
 - Graph implementation using adjacency lists  
 - BFS for breadth-first exploration  
 - DFS for depth-first exploration  
 - Dijkstra’s Algorithm for weighted shortest paths  
 - File-based network topology loading 
 
-### ✔ Real-World Network Data
+###  Real-World Network Data
 - Uses actual traceroute output from:
     tracert google.com
   Hop-to-hop latency is averaged and used as edge weight  
 - Produces an authentic Internet routing graph  
 
-### ✔ Python Visualization (Google Colab)
+### Python Visualization (Google Colab)
 - Generates interactive network diagrams  
 - Highlights shortest path in *red* colour
 - All other edges shown in light gray  
 - Displays IP addresses & weights  
 - Easy to modify for custom datasets  
 
-### ✔ Structured Repository
+###  Structured Repository
 We have tried our best to keep a very structured and oriented repository to keep our work clean:
 
 here is a look of how our repo looks- main highlights :( ├── represents a *file* and / represents a *folder*)
@@ -68,9 +68,9 @@ c.Priority queue (min-heap)
 d.Shortest path algorithms
 e.Real-world traceroute interpretation
 f.Network visualization
-g.File parsing
 h.C++ and Python integration
 
 It was a collaborative effort of all team members - contributors that made this project come alive.
 
 jahnavi ise copy paste daal do read me mein
+
