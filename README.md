@@ -1,6 +1,6 @@
 # Network Routing Optimizer  
 
-NOTE: Most of the project was developed locally and contributions have been mentioned below and can be seen in commits as well.
+NOTE: A part of the project was developed locally and contributions have been mentioned below and can be seen in commits as well.
 
 A C++ and Python project that simulates real-world network routing using graph algorithms.  
 Our Project loads an actual Internet route (captured from tracert), builds a weighted network graph, and computes the shortest path using Dijkstra's algorithm.  
@@ -81,7 +81,13 @@ j.deapth-first search(DFS)
 
 It was a collaborative effort of all team members - contributors that made this project come alive.
 
+Contributions:
+Soumya Sekhar Parida (B24CM1072) -Dijkstra’s Algorithm using priority queues and python visualisation of the graphs , GitHub repo, structure, handling Overload
+Jiya Meena(B24EE1028) - DFS Algorithm, Real world routing data into the graphs and in presentation slides, Handling Busy Nodes
+Jahnavi Ballikuru (B24EE1010)- BFS Algorithm, Header file and declaring functions and implementing adjacency list , Handling Busy Nodes
+
 THANKING EVERYONE FOR THEIR EFFORTS
+
 
 
 
