@@ -27,12 +27,12 @@ public:
 
     vector<int> dijkstra(int start, int end);
 
-    // ---- Busy Node Feature ----
+    // this feature helps to make the nodea busy and non busy
     void block(int node);
     void unblock(int node);
     void showBusyNodes();
 
-    // ---- Capacity Feature ----
+    // feature to check the overloading and changing of paths
     void setCapacity(int node, int cap);
     void showLoadCapacity();
 
@@ -40,3 +40,4 @@ public:
 };
 
 #endif
+
