@@ -4,7 +4,7 @@ A C++ and Python project that simulates real-world network routing using graph a
 Our Project loads an actual Internet route (captured from tracert), builds a weighted network graph, and computes the shortest path using Dijkstra's algorithm.  
 The project also includes a Google Colab visualization that highlights the shortest route in a real network topology.
 
-NOTE: A part of the project was developed locally and contributions have been mentioned below and can be seen in commits as well.
+NOTE: A part of the project was developed locally so there are no pull requests and contributions have been mentioned below and can be seen in commits as well.
 ##  Project Overview
 
 Modern computer networks rely heavily on routing algorithms to determine optimal data paths.  
@@ -89,6 +89,7 @@ Contributions:
 -Jahnavi Ballikuru (B24EE1010)- BFS Algorithm, Header file and declaring functions and implementing adjacency list , Handling Busy Nodes
 
 THANKING EVERYONE FOR THEIR EFFORTS
+
 
 
 
