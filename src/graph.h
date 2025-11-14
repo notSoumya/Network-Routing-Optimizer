@@ -35,9 +35,10 @@ public:
     // feature to check the overloading and changing of paths
     void setCapacity(int node, int cap);
     void showLoadCapacity();
-
+    // print adjacency list(for debuggig)
     void printGraph();
 };
 
 #endif
+
 
