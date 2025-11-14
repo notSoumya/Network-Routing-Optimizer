@@ -58,7 +58,7 @@ void Graph::DFS(int start) {
     DFSUtil(start, visited);
     cout << endl;
 }
-
+//DIJKSTRA'S ALGORITHM
 vector<int> Graph::dijkstra(int start, int end) {
     vector<int> dist(V, INT_MAX);
     vector<int> parent(V, -1);
@@ -74,17 +74,17 @@ vector<int> Graph::dijkstra(int start, int end) {
     int d = pq.top().first;
     int node = pq.top().second;
     pq.pop();
-
+// Skip node if it is blocked or overloaded
     if (busy[node]) continue;
     if (load[node] >= capacity[node]) continue;
-
+// Explore all neighboring nodes
     for (auto &edge : adj[node]) {
         int nxt = edge.first;
         int w = edge.second;
-
+// Skip next node if unavailable
         if (busy[nxt]) continue;
         if (load[nxt] >= capacity[nxt]) continue;
-
+// Standard relaxation step of Dijkstra
         if (dist[node] + w < dist[nxt]) {
             dist[nxt] = dist[node] + w;
             parent[nxt] = node;
@@ -93,7 +93,7 @@ vector<int> Graph::dijkstra(int start, int end) {
     }
 }
 
-
+// If destination was never reached
     if (dist[end] == INT_MAX) {
         cout << "No valid path exists. All possible routes are blocked or full.\n";
         return {};
@@ -106,7 +106,9 @@ vector<int> Graph::dijkstra(int start, int end) {
         curr = parent[curr];
     }
     reverse(path.begin(), path.end());
-
+    
+// Increase load on all nodes in the selected path
+    
     for (int n : path) load[n]++;
 
     return path;
@@ -152,5 +154,6 @@ void Graph::showLoadCapacity() {
         cout << endl;
     }
 }
+
 
 
