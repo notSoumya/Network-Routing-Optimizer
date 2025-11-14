@@ -1,7 +1,7 @@
 # Network Routing Optimizer  
 
 A C++ and Python project that simulates real-world network routing using graph algorithms.  
-Our Project loads an actual Internet route (captured from tracert), builds a weighted network graph, and computes the shortest path using Dijkstra’s Algorithm.  
+Our Project loads an actual Internet route (captured from tracert), builds a weighted network graph, and computes the shortest path using Dijkshtra's algorithm.  
 The project also includes a Google Colab visualization that highlights the shortest route in a real network topology.
 
 ##  Project Overview
@@ -80,6 +80,7 @@ j.deapth-first search(DFS)
 It was a collaborative effort of all team members - contributors that made this project come alive.
 
 THANKING EVERYONE FOR THEIR EFFORTS
+
 
 
 
