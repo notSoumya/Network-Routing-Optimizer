@@ -14,6 +14,7 @@ void Graph::addEdge(int u, int v, int w) {
     adj[u].push_back({v, w});
     adj[v].push_back({u, w});
 }
+// BFS
 
 void Graph::BFS(int start) {
     vector<bool> visited(V, false);
@@ -38,6 +39,7 @@ void Graph::BFS(int start) {
     cout << endl;
 }
 
+
 void Graph::DFSUtil(int node, vector<bool>& visited) {
     visited[node] = true;
     cout << node << " ";
@@ -48,6 +50,7 @@ void Graph::DFSUtil(int node, vector<bool>& visited) {
             DFSUtil(nxt, visited);
     }
 }
+//DFS
 
 void Graph::DFS(int start) {
     vector<bool> visited(V, false);
@@ -149,4 +152,5 @@ void Graph::showLoadCapacity() {
         cout << endl;
     }
 }
+
 
