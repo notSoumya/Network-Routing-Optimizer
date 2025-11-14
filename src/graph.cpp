@@ -14,6 +14,16 @@ void Graph::addEdge(int u, int v, int w) {
     adj[u].push_back({v, w});
     adj[v].push_back({u, w});
 }
+
+//DFS
+
+void Graph::DFS(int start) {
+    vector<bool> visited(V, false);
+    cout << "DFS starting from " << start << ": ";
+    DFSUtil(start, visited);
+    cout << endl;
+}
+
 // BFS
 
 void Graph::BFS(int start) {
@@ -50,14 +60,7 @@ void Graph::DFSUtil(int node, vector<bool>& visited) {
             DFSUtil(nxt, visited);
     }
 }
-//DFS
 
-void Graph::DFS(int start) {
-    vector<bool> visited(V, false);
-    cout << "DFS starting from " << start << ": ";
-    DFSUtil(start, visited);
-    cout << endl;
-}
 //DIJKSTRA'S ALGORITHM
 vector<int> Graph::dijkstra(int start, int end) {
     vector<int> dist(V, INT_MAX);
@@ -154,6 +157,7 @@ void Graph::showLoadCapacity() {
         cout << endl;
     }
 }
+
 
 
 
