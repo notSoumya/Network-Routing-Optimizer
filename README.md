@@ -43,6 +43,8 @@ The result is a complete system that models how data travels across the Internet
 - Easy to modify for custom datasets
 - provides information for deeper network analysis
 - exports the final graph as PNG/SVG for presentation
+- Supports both directed and undirected networks
+- Automatically labels edge weights for clarity
 
 ###  Structured Repository
 We have tried our best to keep a very structured and oriented repository to keep our work clean:
@@ -78,6 +80,7 @@ j.deapth-first search(DFS)
 It was a collaborative effort of all team members - contributors that made this project come alive.
 
 THANKING EVERYONE FOR THEIR EFFORTS
+
 
 
 
